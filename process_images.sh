@@ -7,6 +7,11 @@ if ! command -v convert &> /dev/null; then
     exit 1
 fi
 
+if ! command -v exiftool &> /dev/null; then
+    echo "ExifTool is not installed. Please install it to proceed."
+    exit 1
+fi
+
 # Specify the image directory
 IMAGE_DIR="./src/assets"
 FIXED_IMAGE_DIR="./src/assets/fixed"
@@ -18,9 +23,9 @@ mkdir -p "$RAW_IMAGE_DIR"
 
 # Limit for the dimensions
 LIMIT=1526
-
 IMAGE_LIST=$(find "$IMAGE_DIR" -type f -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" -o -name "*.gif" -o -name "*.svg")
-echo $IMAGE_LIST
+METADATA_TEXT="This is part of Climbing Cookbook"
+
 for image in $IMAGE_LIST
 do
     if [ ! -f "$image" ]; then
@@ -50,6 +55,7 @@ do
         echo "Copying $image without resizing..."
         magick "$image" "$FIXED_IMAGE_DIR/$(basename "${image%.*}").png"
     fi
+    exiftool -overwrite_original -Comment="$METADATA_TEXT" "$FIXED_IMAGE_DIR/$(basename "${image%.*}").png"
 done
 
 echo "All images processed. Replacing original images."
