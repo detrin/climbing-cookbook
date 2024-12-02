@@ -13,11 +13,11 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Welcome!',
 					translations: {
-						cz: 'Průvodce',
+						cz: 'Vítejte!',
 					},
-					autogenerate: { directory: 'guides' },
+					autogenerate: { directory: 'welcome' },
 				},
 				{
 					label: 'Recipes',
