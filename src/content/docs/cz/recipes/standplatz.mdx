@@ -1,16 +1,18 @@
 ---
+import { Image } from 'astro:assets';
+import { Icon } from '@astrojs/starlight/components';
+
+import standplatz01 from '../../../../assets/08a450cb-37b0-4309-ac3a-dff1fd65d005.png';
+import standplatz02 from '../../../../assets/08a450cb-37b0-4309-ac3a-dff1fd65d005.png';
+---
 title: Příklad standu
 description: Příklad štandu s vlastním materiálem
 ---
 
 Naseduje příklad štandu na vlatsném materiálu.
 
-
-![](../../../../assets/08a450cb-37b0-4309-ac3a-dff1fd65d005.png)
-
-![](../../../../assets/7062c1ee-4410-42ce-bd64-7ec7b70efe36.png)
-
-import { Icon } from '@astrojs/starlight/components';
+<Image src={standplatz01} alt="Standplatz 01" />
+<Image src={standplatz02} alt="Standplatz 02" />
 
 <Icon name="warning" color="red" size="2rem" />
 <Icon name="approve-check" color="green" size="2rem" />

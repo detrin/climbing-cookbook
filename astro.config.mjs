@@ -1,11 +1,9 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import starlight from '@astrojs/starlight';
-import image from '@astrojs/image'
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
-		image({ serviceEntryPoint: '@astrojs/image/sharp' }),
 		starlight({
 			title: 'Climbing Cookbook',
 			defaultLocale: 'root',
