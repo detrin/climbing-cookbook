@@ -31,7 +31,7 @@ do
     if [ ! -f "$image" ]; then
         continue
     fi
-
+ 
     # Get current dimensions
     dimensions=$(identify -format "%wx%h" "$image")
     width=$(echo "$dimensions" | cut -d'x' -f1)
