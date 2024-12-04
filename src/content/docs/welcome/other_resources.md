@@ -1,6 +1,6 @@
 ---
-title: Other sources
-description: Other sources
+title: Other resources
+description: Other resources
 ---
 
 ## Sites
